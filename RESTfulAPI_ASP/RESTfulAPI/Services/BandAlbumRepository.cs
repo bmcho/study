@@ -70,42 +70,68 @@ namespace RESTfulAPI.Services
 
         public Album GetAlbum(Guid bandId, Guid albumId)
         {
-            throw new NotImplementedException();
+            if (bandId == Guid.Empty)
+                throw new ArgumentNullException(nameof(bandId));
+
+            if (albumId == Guid.Empty)
+                throw new ArgumentNullException(nameof(albumId));
+
+            return _context.Albums.Where(w => w.BandId == bandId && w.Id == albumId).FirstOrDefault();
         }
 
         public IEnumerable<Album> GetAlbums(Guid bandId)
         {
-            throw new NotImplementedException();
+            if (bandId == Guid.Empty)
+                throw new ArgumentNullException(nameof(bandId));
+
+            var data = _context.Albums.Where(w => w.BandId == bandId);
+
+            if (data.Count() == 0)
+                throw new ArgumentNullException(nameof(bandId));
+
+            return _context.Albums.Where(w => w.BandId == bandId);
+        }
+
+        public IEnumerable<Album> GetAlbums()
+        {
+            return _context.Albums.ToList();
         }
 
         public Band GetBand(Guid bandId)
         {
-            throw new NotImplementedException();
+            if (bandId == Guid.Empty)
+                throw new ArgumentNullException(nameof(bandId));
+
+            return _context.Bands.FirstOrDefault(w => w.Id == bandId);
         }
 
         public IEnumerable<Band> GetBands()
         {
-            throw new NotImplementedException();
+            return _context.Bands.ToList();
         }
 
         public IEnumerable<Band> GetBands(IEnumerable<Guid> bandIds)
         {
-            throw new NotImplementedException();
+            if (bandIds == null)
+                throw new ArgumentNullException(nameof(bandIds));
+
+            return _context.Bands.Where(w => bandIds.Contains(w.Id))
+                .OrderBy(o => o.Name).ToList();
         }
 
         public bool Save()
         {
-            throw new NotImplementedException();
+            return _context.SaveChanges() > 0;
         }
 
         public void UpdateAlbum(Album album)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void UpdateAlbum(Band band)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

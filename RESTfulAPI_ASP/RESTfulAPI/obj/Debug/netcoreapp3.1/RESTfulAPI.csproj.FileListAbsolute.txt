@@ -2,7 +2,6 @@ C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcore
 C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\RESTfulAPI.exe
-C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.csprojAssemblyReference.cache
 C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.AssemblyInfoInputs.cache
 C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.AssemblyInfo.cs
 C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.RazorTargetAssemblyInfo.cache
@@ -49,3 +48,18 @@ C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcore
 C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\RESTfulAPI.deps.json
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\RESTfulAPI.runtimeconfig.json
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\RESTfulAPI.runtimeconfig.dev.json
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\RESTfulAPI.dll
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\RESTfulAPI.pdb
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.dll
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.pdb
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.genruntimeconfig.cache
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.csproj.CoreCompileInputs.cache
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bmcho\Desktop\RESTful\study\RESTfulAPI_ASP\RESTfulAPI\obj\Debug\netcoreapp3.1\RESTfulAPI.csprojAssemblyReference.cache
