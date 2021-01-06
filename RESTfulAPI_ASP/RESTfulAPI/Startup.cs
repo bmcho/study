@@ -14,6 +14,7 @@ using Microsoft.Extensions.Logging;
 using RESTfulAPI.DbContexts;
 using RESTfulAPI.Services;
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 
 namespace RESTfulAPI
 {
@@ -56,6 +57,17 @@ namespace RESTfulAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler(appBuilder =>
+                {
+                    appBuilder.Run(async c => 
+                    {
+                        c.Response.StatusCode = 500;
+                        await c.Response.WriteAsync("Someting went horribly wrong, try again later");
+                    });
+                });
             }
 
             app.UseHttpsRedirection();

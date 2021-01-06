@@ -10,7 +10,6 @@ namespace RESTfulAPI.Services
     {
         IEnumerable<Album> GetAlbums(Guid bandId);
         Album GetAlbum(Guid bandId, Guid albumId);
-        IEnumerable<Album> GetAlbums();
         void AddAlbum(Guid bandId, Album album);
         void UpdateAlbum(Album album);
         void DeleteAlbum(Album album);
@@ -18,6 +17,8 @@ namespace RESTfulAPI.Services
         IEnumerable<Band> GetBands();
         Band GetBand(Guid bandId);
         IEnumerable<Band> GetBands(IEnumerable<Guid> bandIds);
+        IEnumerable<Band> GetBands(string mainGenre);
+
         void AddAlbum(Band band);
         void UpdateAlbum(Band band);
         void DeleteAlbum(Band band);

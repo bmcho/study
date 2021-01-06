@@ -92,11 +92,6 @@ namespace RESTfulAPI.Services
             return _context.Albums.Where(w => w.BandId == bandId);
         }
 
-        public IEnumerable<Album> GetAlbums()
-        {
-            return _context.Albums.ToList();
-        }
-
         public Band GetBand(Guid bandId)
         {
             if (bandId == Guid.Empty)
@@ -117,6 +112,15 @@ namespace RESTfulAPI.Services
 
             return _context.Bands.Where(w => bandIds.Contains(w.Id))
                 .OrderBy(o => o.Name).ToList();
+        }
+
+        public IEnumerable<Band> GetBands(string mainGener)
+        {
+            if (string.IsNullOrWhiteSpace(mainGener))
+                return GetBands();
+
+            mainGener = mainGener.Trim();
+            return _context.Bands.Where(w => w.MainGenre == mainGener).ToList();
         }
 
         public bool Save()

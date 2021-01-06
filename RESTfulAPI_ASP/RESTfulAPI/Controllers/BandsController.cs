@@ -27,11 +27,12 @@ namespace RESTfulAPI.Controllers
         }
         
         [HttpGet]
+        [HttpHead]
         //public IActionResult GetBands()
         //ActionResult<T> 특정 T의 ActionResult를 반환
-        public ActionResult<IEnumerable<BandDto>> GetBands()
+        public ActionResult<IEnumerable<BandDto>> GetBands([FromQuery]string mainGenre)
         {
-            var bandFromRepo = _bandAlbumRepository.GetBands();
+            var bandFromRepo = _bandAlbumRepository.GetBands(mainGenre);
             
             //var bandsDto = new List<BandDto>();
             //foreach (var band in bandFromRepo)
