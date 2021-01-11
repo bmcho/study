@@ -16,6 +16,8 @@ namespace RESTfulAPI.Profiles
                     dest => dest.FoundedYearsAgo,
                     opt => opt.MapFrom(src => $"{src.Founded.ToString("yyyy")}({src.Founded.GetYeasrAgo()}) years ago")
                 );
+
+            CreateMap<Models.BandForCreatingDto, Entities.Band>();
         }
     }
 }

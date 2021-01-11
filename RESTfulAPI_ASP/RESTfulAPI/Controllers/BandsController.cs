@@ -27,12 +27,14 @@ namespace RESTfulAPI.Controllers
         }
         
         [HttpGet]
-        [HttpHead]
+        //[HttpHead] <-- 뭐하는 놈이지 잘 모르곘으나 HttpGet과 똑같이 상속받고 있음
         //public IActionResult GetBands()
         //ActionResult<T> 특정 T의 ActionResult를 반환
-        public ActionResult<IEnumerable<BandDto>> GetBands([FromQuery]string mainGenre)
+        //BandsResourceParameters => 변수들의 그룹핑
+        //public ActionResult<IEnumerable<BandDto>> GetBands([FromQuery]string mainGenre, [FromQuery] string searchQuery)
+        public ActionResult<IEnumerable<BandDto>> GetBands([FromQuery] BandsResourceParameters bandsResourceParameters)
         {
-            var bandFromRepo = _bandAlbumRepository.GetBands(mainGenre);
+            var bandFromRepo = _bandAlbumRepository.GetBands(bandsResourceParameters);
             
             //var bandsDto = new List<BandDto>();
             //foreach (var band in bandFromRepo)
@@ -48,10 +50,10 @@ namespace RESTfulAPI.Controllers
             //return Ok(bandsDto);
 
             //AutoMaaper
-            return Ok(_mapper.Map<IEnumerable<BandDto>>(bandFromRepo));
+            return Ok(_mapper.Map<IEnumerable<BandDto>>(bandFromRepo)); 
         }
 
-        [HttpGet("{bandId}")]
+        [HttpGet("{bandId}", Name ="GetBand")]
         public IActionResult GetBand(Guid bandId)
         {
             //if (!_bandAlbumRepository.BandExisits(bandId))
@@ -63,6 +65,18 @@ namespace RESTfulAPI.Controllers
                 return NotFound();
 
             return new JsonResult(bandFromRepo);
+        }
+
+        [HttpPost]
+        public ActionResult<BandDto> CreateBand([FromBody] BandForCreatingDto band)
+        {
+            var bandEntity = _mapper.Map<Entities.Band>(band);
+            _bandAlbumRepository.AddAlbum(bandEntity);
+            _bandAlbumRepository.Save();
+
+            var bandToReturn = _mapper.Map<BandDto>(bandEntity);
+
+            return CreatedAtRoute("GetBand", new { bandId = bandToReturn.Id }, bandToReturn);
         }
     }
 }

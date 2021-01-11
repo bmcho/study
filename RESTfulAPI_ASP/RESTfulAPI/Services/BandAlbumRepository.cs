@@ -1,5 +1,6 @@
 ﻿using RESTfulAPI.DbContexts;
 using RESTfulAPI.Entities;
+using RESTfulAPI.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -121,6 +122,53 @@ namespace RESTfulAPI.Services
 
             mainGener = mainGener.Trim();
             return _context.Bands.Where(w => w.MainGenre == mainGener).ToList();
+        }
+
+        public IEnumerable<Band> GetBands(string mainGener, string searchQuery)
+        {
+            if (string.IsNullOrWhiteSpace(mainGener) && string.IsNullOrWhiteSpace(searchQuery))
+                return GetBands();
+
+            var collection = _context.Bands as IQueryable<Band>;
+
+            if (!string.IsNullOrWhiteSpace(mainGener))
+            {
+                mainGener = mainGener.Trim();
+                collection = collection.Where(w => w.MainGenre == mainGener);
+            }
+
+            if (!string.IsNullOrWhiteSpace(searchQuery))
+            {
+                searchQuery = searchQuery.Trim();
+                collection = collection.Where(w => w.Name.Contains(searchQuery));
+            }
+
+            return collection.ToList();
+        }
+
+        public IEnumerable<Band> GetBands(BandsResourceParameters bandsResourceParameters)
+        {
+            if (bandsResourceParameters == null)
+                throw new ArgumentException(nameof(bandsResourceParameters));
+
+            if (string.IsNullOrWhiteSpace(bandsResourceParameters.MainGenre) && string.IsNullOrWhiteSpace(bandsResourceParameters.SearchQuery))
+                return GetBands();
+
+            var collection = _context.Bands as IQueryable<Band>;
+
+            if (!string.IsNullOrWhiteSpace(bandsResourceParameters.MainGenre))
+            {
+                var mainGenre = bandsResourceParameters.MainGenre.Trim();
+                collection = collection.Where(w => w.MainGenre == mainGenre);
+            }
+
+            if (!string.IsNullOrWhiteSpace(bandsResourceParameters.SearchQuery))
+            {
+                var searchQuery = bandsResourceParameters.SearchQuery.Trim();
+                collection = collection.Where(w => w.Name.Contains(searchQuery));
+            }
+
+            return collection.ToList();
         }
 
         public bool Save()
